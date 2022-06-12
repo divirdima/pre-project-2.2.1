@@ -1,6 +1,6 @@
 package hiber.config;
 
-import hiber.model.User;
+import hiber.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -46,6 +46,8 @@ public class AppConfig {
 
       factoryBean.setHibernateProperties(props);
       factoryBean.setAnnotatedClasses(User.class);
+      factoryBean.setAnnotatedClasses(Car.class);
+      factoryBean.setPackagesToScan("hiber.model");
       return factoryBean;
    }
 
